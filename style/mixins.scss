@@ -1,0 +1,149 @@
+@mixin respond-to($breakpoint) {
+    @media screen and (min-width:$breakpoint) {
+        @content;
+    }
+}
+
+@mixin build($width: -1,
+    $height: -1,
+    $bg-color: -1,
+    $border: -1,
+    $breakpoint:0px) {
+    @include respond-to($breakpoint){
+        @if $width !=-1 {
+            width: $width;
+        }
+    
+        @if $height !=-1 {
+            height: $height;
+        }
+    
+        @if $bg-color !=-1 {
+            background-color: $bg-color;
+        }
+    
+        @if $border !=-1 {
+            border: $border;
+        }
+    }
+
+}
+
+@mixin flex($direction: row,
+    $wrap: wrap,
+    $align: flex-start,
+    $justify: flex-start,
+    $gap: 0px,
+    $breakpoint: 0px) {
+
+    display: flex;
+    @include respond-to($breakpoint) {
+        @if $direction !=-1 {
+            flex-direction: $direction;
+        }
+
+        @if $wrap !=-1 {
+            flex-wrap: $wrap;
+        }
+
+        @if $align !=-1 {
+            align-items: $align;
+        }
+
+        @if $justify !=-1 {
+            justify-content: $justify;
+        }
+
+        @if $gap !=-1 {
+            gap: $gap;
+        }
+    }
+}
+
+@mixin text-edit($font-size: -1,
+    $color: -1,
+    $lh: -1,
+    $text-shadow: -1,
+    $text-align: -1,
+    $weight: -1,
+    $breakpoint: 0px) {
+
+    @include respond-to($breakpoint) {
+        @if($font-size !=-1) {
+            font-size: $font-size;
+        }
+
+        @if($color !=-1) {
+            color: $color;
+        }
+
+        @if($lh !=-1) {
+            line-height: $lh;
+        }
+
+        @if($text-shadow !=-1) {
+            text-shadow: $text-shadow;
+        }
+
+        @if($text-align !=-1) {
+            text-align: $text-align;
+        }
+
+        @if($weight !=-1) {
+            font-weight: $weight;
+        }
+    }
+
+    // @if $breakpoint!=-1{
+    //     @include respond-to($breakpoint){
+    //         @if($font-size !=-1) {
+    //             font-size: $font-size;
+    //         }
+
+    //         @if($color !=-1) {
+    //             color: $color;
+    //         }
+
+    //         @if($lh !=-1) {
+    //             line-height: $lh;
+    //         }
+
+    //         @if($text-shadow !=-1) {
+    //             text-shadow: $text-shadow;
+    //         }
+
+    //         @if($text-align !=-1) {
+    //             text-align: $text-align;
+    //         }
+
+    //         @if($weight !=-1) {
+    //             font-weight: $weight;
+    //         }
+    //     }
+    // }
+    // @else {
+    //     @if($font-size !=-1) {
+    //         font-size: $font-size;
+    //     }
+
+    //     @if($color !=-1) {
+    //         color: $color;
+    //     }
+
+    //     @if($lh !=-1) {
+    //         line-height: $lh;
+    //     }
+
+    //     @if($text-shadow !=-1) {
+    //         text-shadow: $text-shadow;
+    //     }
+
+    //     @if($text-align !=-1) {
+    //         text-align: $text-align;
+    //     }
+
+    //     @if($weight !=-1) {
+    //         font-weight: $weight;
+    //     }
+    // }
+}

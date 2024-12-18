@@ -1,0 +1,41 @@
+.contact{
+    @include flex($direction:column,$align:center,$justify:center);
+    @include flex($direction:row,$justify:space-around,$breakpoint:$large);
+}
+.contact-1{
+    padding: 15px 0px;
+    >img{
+        display: block;
+        width:300px;
+        margin:auto;
+        @include respond-to($medium){
+            width:300px;
+        }
+    }
+    .media{
+        @include flex($direction:column,$justify:center,$gap:10px);
+        div{
+            @include flex($align:center);
+        }
+        img{
+            width:25px;
+        }
+    }
+}
+.contact-2{
+    @include flex(column);
+    input,textarea{
+        display: block;
+        padding: 5px;
+        margin:5px 0px;
+    }
+    input{
+        align-self: stretch;
+        @include respond-to($medium){
+            width:fit-content;
+        }
+    }
+    textarea{
+        align-self: stretch;
+    }
+}

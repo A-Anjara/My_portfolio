@@ -1,0 +1,58 @@
+.service{
+    @include flex($direction:row,$align:center,$justify:center);
+    position:relative;
+    .element-card{
+        @include build($bg-color:$secondary-bg-color);
+        align-self: stretch;
+        padding: 15px;
+        position:relative;
+        width: 275px;
+        text-align: center;
+        
+        &:hover{
+            cursor:pointer;
+            position:relative;
+            transform: scale(1.05,1.05);
+            border:1px solid white;
+            z-index: 15;
+            &::before{
+                position:absolute;
+                top:0;
+                left:0;
+                border-radius: inherit;
+                margin:5px;
+                content: " ";
+                width:5px;
+                height: 5px;
+                background-color: white;
+                animation: round 2s;
+                animation-iteration-count: 2;
+                animation-delay: 0.5s;
+            }
+        }
+    }
+    .service-pack{
+        width: 100%;
+        transform: scale(0,0);
+        height:0;
+        opacity: 0.5;
+        transition: transform 1s;
+    }
+    input{
+        order:100;
+        display: inline-block;
+        display: block;
+    }
+    
+    @for $i from 1 through 3{
+        input:nth-child(#{$i*2-1}):checked{
+            ~.service-pack:nth-child(#{2*$i}){
+                height: fit-content;
+                transform: scale(1,1);
+                opacity:1;
+                order:10;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,7 @@
+.element-rating {
+    @include flex($justify:center);
+    flex-grow: 1;
+    img {
+        width: 40px;
+    }
+}

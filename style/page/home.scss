@@ -1,0 +1,76 @@
+.home {
+    .container{
+        overflow: hidden;
+        @include build($border:1px solid white);
+        padding: 10px;
+        border-radius: 25px;
+        @include flex(row,-1,-1,-1,-1);
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        @include text-edit(25px);
+        @include text-edit(35px,$breakpoint:$small);
+        @include text-edit(65px,$lh:90px,$breakpoint:$medium);
+        @include text-edit(125px,$lh:110px,$breakpoint:$large);
+        position:relative;
+        margin-top:10px;
+        span{
+            display: block;
+        }
+        .left{
+            letter-spacing: 5px;
+            flex-grow: 1;
+            @include text-edit(
+                                $color:transparent,
+                                $text-shadow:(  0px 0px $ternary-bg-color,
+                                                0px 1px white,
+                                                0px -1px white,
+                                                1px 1px white,
+                                                -1px 0px white),
+                                $text-align:center);
+            @include respond-to($large){
+                span:nth-child(1){
+                    @include text-edit($text-align:left);
+                }
+                span:nth-child(3){
+                    @include text-edit($text-align:right);
+                }
+            }
+        }
+        .right{
+            @include flex($direction:column,$align:center,$justify:space-between);
+            @include text-edit(15px);
+            @include text-edit(35px,$breakpoint:$medium);
+            span:nth-child(1){
+                padding: 50px 10px 10px;
+                margin: 0px 2px;
+                border:1px solid white;
+                border-radius:0px 0px 10px 10px;
+                box-shadow:-2px 2px 1px white,
+                            2px 2px 1px white,
+                            -5px -5px 2px $primary-bg-color
+                            ,-4px -10px white,
+                            -8px -10px white,
+                            -8px -1px white;
+            }
+            span:nth-child(2){
+                align-self: flex-end;
+                letter-spacing: 3px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                @include text-edit(17px,$lh:25px,$text-align:right);
+                @include text-edit(20px,$breakpoint:$medium);
+            }
+        }
+        .element-decorer{
+            background-color: $ternary-bg-color;
+            border-radius: inherit;
+            &-decoration{
+                margin:auto;
+                transform: scale(35,10);
+                bottom:20px;
+                @include respond-to($medium){
+                    bottom: 25px;
+                    transform: scale(75,25);
+                }
+            }
+        }
+    }
+}

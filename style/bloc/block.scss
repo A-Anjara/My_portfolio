@@ -1,0 +1,12 @@
+.block{
+    &-primary{
+        background-color: $primary-bg-color;
+    }
+    &-secondary{
+        background-color: $secondary-bg-color;
+    }
+    &-ternary{
+        background-color: $ternary-bg-color;
+    }
+    position:relative;
+}

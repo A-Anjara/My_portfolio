@@ -1,0 +1,50 @@
+.card-container{
+    @include flex($justify:space-evenly,$gap:15px);
+    &-style-background{
+        .element-card{
+            background-image: linear-gradient(0deg,rgba(120,120,120,0.75),rgba(200,200,200,0.1));
+            box-shadow: 0px 0px 5px rgb(200,200,200);
+            &:hover{
+                box-shadow: 0px 0px 10px rgb(255,255,255);
+                cursor:pointer;
+            }
+        }
+        
+    }
+    padding: 15px;
+    &-style-layout{
+        .element-card{
+            margin:50px 0px;
+            border:1px solid white;
+            padding: 50px 0;
+            position:relative;
+            >img{
+                padding: 0 50px;
+                width:175px;
+                height: 175px;
+            }
+            font-size: $fs*2;
+                letter-spacing: 2px;
+                font-variant: small-caps;
+            &-label{
+                @include flex($direction:column,$align:center);
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                line-height: $fs*1.6;
+                position: absolute;
+                top:-25px;
+                left:-2px;
+                padding: 0px 25px;
+                background-color: $primary-bg-color;
+                box-shadow: 0px 0px 2px,9px 9px 1px $primary-bg-color,10px 10px 4px white;
+            }
+            &-name{
+                position:absolute;
+                background-color: $primary-bg-color;
+                bottom:-15px;
+                right: -2px;
+                padding-right: 10px;
+                box-shadow: 0px 0px 2px;
+            }
+        }
+    }
+}

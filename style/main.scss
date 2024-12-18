@@ -1,0 +1,19 @@
+// @use 'color.scss';
+// @use 'variable.scss';
+// @use 'mixins.scss';
+// @use 'typography.scss';
+// @use 'base.scss';
+// @use 'bloc';
+// @use 'element';
+// @use 'page';
+
+@import './color.scss',
+    './variable.scss',
+    './mixins.scss',
+    './typography.scss',
+    './base.scss',
+    './bloc/',
+    './element/',
+    './page/'
+;
+

@@ -1,0 +1,15 @@
+.element-intro{
+    @include text-edit($text-align:center);
+    span{
+        font-size: 50px;
+        font-weight: 700;
+        letter-spacing: -5px;
+    }
+    img{
+        width:50px;
+        position: relative;
+        top:-30px;
+        left:35px;
+        transform: rotate(-25deg);
+    }
+}
