@@ -93,11 +93,14 @@ a{
         width:75px;
         display: block;
         margin:auto;
+        box-sizing: border-box;
+        border-radius: 150px;
         @include respond-to($medium){
             width:125px;
         }
         @include respond-to($large){
             width:225px;
+            padding: 10px;
         }
     }
     nav{
